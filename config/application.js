@@ -85,7 +85,7 @@ module.exports = function(lineman) {
             src: "<%= files.js.concatenated %>",
             dest: "<%= files.js.concatenated %>"
         }
-    }
+    },
     // API Proxying
     //
     // During development, you'll likely want to make XHR (AJAX) requests to an API on the same
@@ -124,7 +124,7 @@ module.exports = function(lineman) {
     // make a change in each browser you're working against. To enable LiveReload,
     // comment out the following line:
     //
-    // livereload: true
+    livereload: true
 
   };
 };
