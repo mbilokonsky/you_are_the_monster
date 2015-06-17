@@ -1,0 +1,4 @@
+<div class='<%= featureName %>'>
+  <h3>Angular Feature: <%= featureName %></h3>
+  This template is working as expected.
+</div>

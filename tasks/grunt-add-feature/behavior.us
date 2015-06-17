@@ -1,0 +1,13 @@
+<%= appName %>.directive('<%= featureName %>', function(<%= featureName %>Link) {
+  return {
+    restrict:'E',
+    replace: true,
+    link: <%= featureName %>Link,
+    templateUrl: '<%= templateName %>'
+  };
+}).service('<%= featureName %>Link', function() {
+  return function(scope, element, attributes, parents) {
+    console.log('Linking function executed for feature "<%= featureName %>"');
+    scope.linkReady = true;
+  };
+});
