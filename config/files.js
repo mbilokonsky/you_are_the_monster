@@ -20,6 +20,10 @@ module.exports = function(lineman) {
         "app/js/app.js",
         "app/js/**/*.js",
         "app/features/**/behavior.js"
+      ],
+      spec: [
+        "app/features/**/spec.js",
+        "spec/**/*spec.js"
       ]
     },
 
@@ -38,7 +42,5 @@ module.exports = function(lineman) {
     template: {
       generated: "<%= files.ngtemplates.dest %>"
     }
-
-
   };
 };
