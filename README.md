@@ -14,3 +14,33 @@ Do you have some stuff you want to add that doesn't fit neatly into this workflo
 Third party dependencies should be dumped into the appropriate folder in /vendor. If you find yourself adding `<script>` tags for javascript or `<link>` tags for css then you've misunderstood the way the whole tool works. All that stuff gets baked in for you as long as you drop it into the right folder. All you should really be focusing on is (1) creating features, and (2) adding those features to other features or to index.html using their associated directives.
 
 Anyway. Updates to your files will be captured while `lineman run` is running, tests will automatically update while `lineman spec` is running, etc. Type `lineman build` to create a minified uglified deployable application that you'll find in the /dist folder.
+
+# Sublime Text integration
+If you want, you can follow these steps to get a keyboard shortcut in sublime text to add features.
+
+  1. Install [`ShellCommand`](https://github.com/markbirbeck/sublime-text-shell-command) using [Package Control](https://sublime.wbond.net/)
+  1. Press `cmd-shift-P` and type "Key" into the box that comes up
+  1. Select "Preferences: Key Bindings - User"
+  1. Paste the following into the file it opens:
+  ```
+  [
+    {
+      "keys":["ctrl+enter"],
+      "command": "shell_command",
+      "args" : {
+        "root_dir": true
+      }
+    },
+    {
+      "keys":["ctrl+shift+f"],
+      "command": "shell_command",
+      "args" : {
+        "command": "lineman grunt addFeature:${featureName::Name of Feature to Add:}",
+        "root_dir": true,
+        "panel": true
+      }
+    }
+  ]
+  ```
+
+  Now, if you open the parent folder in Sublime Text, you can press `ctrl-enter` to execute arbitrary command line commands straight from SublimeText, and you can press `ctrl-shift-f` to add a feature. It'll ask you for the feature name and create that feature in your application. Note: you MUST open the project folder in sublime text for this to work - it'll use the path of the root open folder as the path from which to execute command line commands.
