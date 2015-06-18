@@ -21,6 +21,10 @@ module.exports = function(lineman) {
         root: "app/features/"
     },
 
+    addRoute: {
+        root: "app/routes/"
+    },
+
     ngtemplates: {
         app: {
             src: "app/features/**/template.html",
@@ -59,7 +63,7 @@ module.exports = function(lineman) {
             tasks: ["ngtemplates", "concat_sourcemap:js"]
         },
         js: {
-            files: ["app/features/**/behavior.js", "app/js/**/*.js"],
+            files: ["app/features/**/behavior.js", "app/routes/**/route.js", "app/js/**/*.js"],
             tasks: ["concat_sourcemap:js"]
         },
         less_imports: {

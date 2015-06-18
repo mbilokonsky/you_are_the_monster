@@ -1,0 +1,6 @@
+<%= appName %>.config(function($stateProvider) {
+  $stateProvider.state('<%= fullStateName %>', {
+    url: '<%= url %>',
+    template: '<<%= feature %>></<%= feature %>>'
+  });
+});

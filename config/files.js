@@ -19,10 +19,12 @@ module.exports = function(lineman) {
       app: [
         "app/js/app.js",
         "app/js/**/*.js",
+        "app/routes/**/route.js",
         "app/features/**/behavior.js"
       ],
       spec: [
         "app/features/**/spec.js",
+        "app/routes/**/spec.js",
         "spec/**/*spec.js"
       ]
     },
