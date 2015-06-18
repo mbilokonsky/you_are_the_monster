@@ -1,0 +1,32 @@
+describe("<%= featureName %> behavior", function() {
+  describe("linking function", function() {
+    var subject, scope, element, attributes, parents;
+
+    beforeEach(function() {
+      module('<%= appName %>', function($provide) {
+        // you can inject mocks here, like this:
+        // $provide.value('foo', 'bar');
+      });
+
+      inject(function(<%= featureName %>Link) {
+        subject = <%= featureName %>Link;
+      });
+
+      scope = {};
+    });
+
+    it('is a function', function() {
+      expect(angular.isFunction(subject));
+    });
+
+    describe("which, when called", function() {
+      beforeEach(function() {
+        subject(scope, element, attributes, parents);
+      });
+
+      it('sets scope.isReady to true [example]', function() {
+        expect(scope.isReady);
+      });
+    });
+  });
+});
