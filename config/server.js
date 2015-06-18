@@ -17,5 +17,9 @@ module.exports = {
     // app.get('/api/greeting/:message', function(req, res){
     //   res.json({ message: "OK, "+req.params.message });
     // });
+
+    app.get('/mockData', function(req, res) {
+      res.json(['foo', 'bar', 'baz']);
+    })
   }
 };
