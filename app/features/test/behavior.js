@@ -3,7 +3,8 @@ app.directive('test', function(testLink) {
     restrict:'E',
     replace: true,
     link: testLink,
-    templateUrl: 'test'
+    templateUrl: 'test',
+    transclude: true
   };
 }).service('testLink', function() {
   return function(scope, element, attributes, parents) {
