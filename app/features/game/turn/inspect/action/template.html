@@ -1,0 +1,22 @@
+<div class='action'>
+  <div ng-switch="action.type">
+    <div ng-switch-when="chooseOne">
+      <label>{{action.label}}
+        <select
+          ng-model="output.value"
+          ng-options="item for item in source"
+        />
+      </label>
+    </div>
+    <div ng-switch-when="inputNumber">
+      <label>{{action.label}}
+        <input
+          type="number"
+          min="{{action.range[0]}}"
+          max="{{action.range[1]}}"
+          model="output.value">
+        </input>
+      </label>
+    </div>
+  </div>
+</div>

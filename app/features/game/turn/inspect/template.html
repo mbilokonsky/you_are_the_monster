@@ -1,0 +1,22 @@
+<div class="modal fade" id="inspectEvent">
+  <div class='modal-dialog'>
+    <div class="modal-content">
+      <div class="modal-header">
+        {{selectedEvent.label}}
+      </div>
+      <div class="modal-body">
+        {{selectedEvent.flavor}}
+        <action
+          ng-repeat="action in selectedEvent.actions"
+          action="action"
+          output="actionOutput[action.bindTo]"
+          source="selectedEvent.details[action.from]">
+        </action>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="confirm()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

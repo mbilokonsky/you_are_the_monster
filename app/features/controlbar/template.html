@@ -1,0 +1,10 @@
+<nav class='controlbar navbar navbar-default navbar-fixed-top'>
+  <div class="navbar-header">
+    <span class="navbar-brand" ui-sref="intro">You Are The Monster</span>
+  </div>
+
+  <div class="navbar-right">
+    <span class="navbar-text" ng-repeat="resource in resources">{{resource.name}} : {{resource.snapshot()}}</span>
+  </div>
+
+</nav>

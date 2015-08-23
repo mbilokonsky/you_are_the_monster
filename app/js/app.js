@@ -4,6 +4,7 @@ if (window.jasmine) {
 }
 var app = angular.module("app", deps);
 
-app.config(function($locationProvider, $stateProvider) {
-
+app.config(function($urlRouterProvider, $locationProvider, $stateProvider) {
+  $urlRouterProvider.otherwise("/");
+  // $locationProvider.html5Mode(true);
 });

@@ -1,0 +1,11 @@
+<div class='game'>
+  <h3>Hi, Boss. Here are this week's reports.</h3>
+  <div class="reports row">
+    <ul class="nav nav-tabs">
+      <li role='presentation' ng-repeat='report in reports' ng-class="getTabClass(report)"><a ui-sref='game.{{report}}'>{{report}}</a></li>
+      <li role="presentation" class="pull-right" ng-class="getTabClass('turn')"><a ui-sref='game.turn'>take your turn</a></li>
+    </ul>
+  <div class="report" ui-view></div>
+    <div class="clear"></div>
+  </div>
+</div>
